@@ -3,7 +3,7 @@ This is Source Defense Test</br>
 In order to run this test make next steps:</br>
 
 <b>Prepare</b>
-1. Download NodeJs from https://nodejs.org/en/download/
+1. Download and install NodeJs from https://nodejs.org/en/download/
 2. in command line install Protractor by running next command:</br>
   <b>npm install -g protractor</b></br>
   <b>webdriver-manager update</b></br>
