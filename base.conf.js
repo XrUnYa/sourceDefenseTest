@@ -1,5 +1,6 @@
 let SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 var HtmlReporter = require('protractor-beautiful-reporter');
+var fs = require('fs');
 
 exports.config = {
   framework: 'jasmine2',
@@ -28,7 +29,7 @@ exports.config = {
         displayStacktrace: true
       },
       summary: {
-        displayDuration: false
+        displayDuration: true
       }
     }));
     jasmine.getEnv().addReporter(new HtmlReporter({
@@ -38,5 +39,12 @@ exports.config = {
       , docTitle: 'Source Defense Test'
       , screenshotsSubfolder: 'images'
    }).getJasmine2Reporter());
+  },
+  afterLaunch: function () {
+    fs.rename('network.json','reports/network.json', function(err){
+      if(err){
+      console.log("Network Logs has not been moved due: " + err)
+      }
+    }) 
   }
 };
